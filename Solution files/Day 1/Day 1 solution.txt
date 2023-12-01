@@ -1,3 +1,8 @@
-Num_of_proucts_less_than_20 = COUNTROWS(
+Day 1 = COUNTROWS(
                                         FILTER(Products, Products[Discontinued] = False && Products[UnitPrice] < 20)
                                         )
+
+
+-- This counts the number of rows where products(discontinued) are False and unit price is < 20.
+
+Results show that 37 current products out of the entire list of products are less than $20.
