@@ -1,6 +1,6 @@
 Day 1 = COUNTROWS(
-                                        FILTER(Products, Products[Discontinued] = False && Products[UnitPrice] < 20)
-                                        )
+                  FILTER(Products, Products[Discontinued] = False && Products[UnitPrice] < 20)
+                  )
 
 
 -- This counts the number of rows where products(discontinued) are False and unit price is < 20.
