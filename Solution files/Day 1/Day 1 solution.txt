@@ -1,0 +1,3 @@
+Num_of_proucts_less_than_20 = COUNTROWS(
+                                        FILTER(Products, Products[Discontinued] = False && Products[UnitPrice] < 20)
+                                        )
