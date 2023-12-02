@@ -1,0 +1,15 @@
+-- First create a measure that finds the maximum unit price from the product table
+
+Max price = MAX(Products[UnitPrice])
+
+
+-- The second measure
+
+Day 2 = CALCULATE( MAX(Products[ProductName]), FILTER(Products, Products[Unit Price] = [Max price]))
+
+
+-- Quick explanation of the logic of the code above
+
+CALCULATE is a DAX function that is used to change the context of something. It's like saying calculate something for me but use the following conmditions to do so.
+MAX(Products[ProductName]) - this argument alone would give you the max product name in the column, which isn't what we want.
+FILTER(Products, Products[Unit Price] = [Max price])
