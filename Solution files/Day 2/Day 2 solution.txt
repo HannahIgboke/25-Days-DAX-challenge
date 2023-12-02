@@ -1,15 +1,18 @@
--- First create a measure that finds the maximum unit price from the product table
+Day 2 = CALCULATE(
+                  SELECTEDVALUE(Products[ProductName]), 
+                  TOPN(1, Products, [Unit Price], DESC)
+                  )
 
-Max price = MAX(Products[UnitPrice])
+-- Quick explanation
+The DAX above is broken into two parts
+
+1. TOPN(1, Products, [Unit Price], DESC)
+
+This selects the top 1 row of data after organizing the unit price column of the products table in descending order.
 
 
--- The second measure
+2. SELECTEDVALUE(Products[ProductName])
 
-Day 2 = CALCULATE( MAX(Products[ProductName]), FILTER(Products, Products[Unit Price] = [Max price]))
+This part helps us select only the product name from the row of data 
 
-
--- Quick explanation of the logic of the code above
-
-CALCULATE is a DAX function that is used to change the context of something. It's like saying calculate something for me but use the following conmditions to do so.
-MAX(Products[ProductName]) - this argument alone would give you the max product name in the column, which isn't what we want.
-FILTER(Products, Products[Unit Price] = [Max price]) - the second argument helps us 
+P.S CALCULATE is a DAX funcction that is used to evaluate an expression in a modified filter context.
