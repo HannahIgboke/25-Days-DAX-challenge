@@ -1,0 +1,6 @@
+Day 4 = CALCULATE(
+                    COUNTROWS(Products),
+                    Products[UnitPrice] > AVERAGE(Products[UnitPrice])
+                  )
+
+-- This counts the number of rows where the unit price is greater than the average unit price.
