@@ -1,1 +1,21 @@
-Day 6
+This can be done in two ways:
+
+# Method 1:
+
+1. Create a summary table 
+
+Day 6 table = SUMMARIZE(Orders, Orders[OrderID], "Productcount", COUNTA(Orders[ProductID]))
+
+This summarizes the orders table by the orderid and counts the number of products per orderid
+
+2. Find the average
+
+Day 6 = AVERAGEX('Day 6 table', 'Day 6 table'[Productcount])
+
+
+# Method 2:
+
+Day 6 = AVERAGEX(
+                SUMMARIZE(Orders, Orders[OrderID], "ProductCount", COUNTA(Orders[ProductID])),
+                [ProductCount]
+                )
