@@ -1,1 +1,3 @@
-Day 5
+Day 5 = CALCULATE(
+                    COUNTROWS(FILTER(Products, Products[UnitPrice] >= 15 && Products[Unit Price] <= 25
+                    )))
