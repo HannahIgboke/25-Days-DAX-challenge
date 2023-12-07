@@ -1,0 +1,4 @@
+Day 9 = CALCULATE(
+                AVERAGEX(
+                 VALUES(Orders[OrderID]),
+                 [Total sales]), Customers[CompanyName] = "Romero y Tomillo")
