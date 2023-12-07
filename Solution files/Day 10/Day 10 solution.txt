@@ -1,0 +1,4 @@
+Day 10 = CALCULATE(
+                    (DATEDIFF(MAX(Orders[OrderDate]), TODAY(), DAY)), 
+                    FILTER(Customers, Customers[CompanyName] = "North/South")
+                )
