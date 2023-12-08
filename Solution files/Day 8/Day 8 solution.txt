@@ -9,5 +9,5 @@ To understand this:
 - SUMMARIZE(Orders, Orders[OrderID], "No of products", COUNTA(Orders[ProductID]))
 This summarizes the orders table by the order id, and the number of products per order id
 
-- The next part of the filters the summary table we created for cases where the number of products ordered is equal to 1
+- The next part of the code filters the summary table we created for cases where the number of products ordered is equal to 1
 - The final part now counts the rows of data from our filtered table where number of products = 1
