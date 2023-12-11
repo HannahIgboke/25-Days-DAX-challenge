@@ -1,1 +1,13 @@
+Day 14 = 
 
+VAR allcustomers = VALUES(Customers[CustomerID])
+VAR customers_who_purchased_QC = CALCULATETABLE(VALUES(Orders[CustomerID]), FILTER(ALL(Orders), Orders[ProductID] = 11))
+
+RETURN
+CALCULATE(DISTINCTCOUNT(Customers[CustomerID]), EXCEPT(allcustomers, customers_who_purchased_QC))
+
+-- Quick explanation
+
+- Create variable allcustomers that gets a list of distinct customers from the customers table
+- A second variable that creates a list of customers who have purchased Queso Cabrales.
+- The output does a distinct count of customers who are on the allcustomers list and are not the customers_who_purchased_QC list.
