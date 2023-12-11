@@ -1,1 +1,4 @@
-
+Day 13 = CALCULATE(
+                    COUNTROWS(
+                            SUMMARIZE(Orders, Orders[CustomerID], "latest_purchase", MAX(Orders[OrderDate]))
+                    ))
