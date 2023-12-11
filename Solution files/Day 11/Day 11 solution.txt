@@ -1,0 +1,12 @@
+Day 11 = CALCULATE(
+                    COUNTROWS(
+                        FILTER(SUMMARIZE(ALL(Orders), Orders[CustomerID], "No_of_times_purchased", DISTINCTCOUNT(Orders[OrderID])),
+                        [No_of_times_purchased] = 1)
+                        )
+                  )
+
+This can be broken down into stages:
+
+- First Summarize the orders table by the customer_id and the number of times they have placed orders.
+- Next filter this table for cases where the number of times purchased is equal to 1.
+- Finally count the rows of data that meet our filter criterion.
