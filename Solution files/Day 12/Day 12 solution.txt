@@ -1,5 +1,7 @@
 Day 12 = CALCULATE(
                     COUNTROWS(
                         FILTER(
-                            SUMMARIZE(Orders, Orders[CustomerID], Orders[OrderDate]), YEAR(Orders[OrderDate]) = 2022)
-                    ))
+                            SUMMARIZE(Orders, Orders[CustomerID], "First_purchase", MIN(Orders[OrderDate])), YEAR([First_purchase]) = 2021
+                              )
+                            )
+                  )
