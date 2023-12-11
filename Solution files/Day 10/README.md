@@ -1,4 +1,4 @@
-# Day 1️⃣0️⃣
+# Day 🔟
 
 How many days since "North/South" last purchase?
 
